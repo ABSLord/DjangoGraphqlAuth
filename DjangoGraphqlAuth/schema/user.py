@@ -15,5 +15,4 @@ class Query(graphene.ObjectType):
 
     @login_required
     def resolve_users(self, info):
-        print(info.context.user)
         return get_user_model().objects.all()
